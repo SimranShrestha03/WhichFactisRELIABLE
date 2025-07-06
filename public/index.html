@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Which Fact Is Reliable? Quiz App</title>
+
+    <!-- Preload audio files -->
+    <link rel="preload" href="/sounds/ticking_clock.mp3" as="audio" />
+    <link rel="preload" href="/sounds/nah.mp3"        as="audio" />
+    <link rel="preload" href="/sounds/clap.wav"       as="audio" />
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- Hidden audio elements for playback -->
+    <audio id="correct-sound" preload="auto">
+      <source src="/sounds/clap.wav"          type="audio/wav"   />
+    </audio>
+
+    <audio id="incorrect-sound" preload="auto">
+      <source src="/sounds/nah.mp3"           type="audio/mpeg"  />
+    </audio>
+
+    <audio id="tick-sound" preload="auto">
+      <source src="/sounds/ticking_clock.mp3" type="audio/mpeg"  />
+    </audio>
+
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

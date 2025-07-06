@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animate-spin-slow {
+    animation: spin 20s linear infinite;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* COVID pattern background */
+.covid-bg {
+  background-color: #f0f4f8;
+}
+
+/* Shake animations for feedback */
+@keyframes shake-green {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+  20%, 40%, 60%, 80% { transform: translateX(2px); }
+}
+
+@keyframes shake-red {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+  20%, 40%, 60%, 80% { transform: translateX(2px); }
+}
+
+.shake-green {
+  animation: shake-green 0.5s cubic-bezier(.36,.07,.19,.97) both;
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.5);
+}
+
+.shake-red {
+  animation: shake-red 0.5s cubic-bezier(.36,.07,.19,.97) both;
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
+}
+
+/* Timer animation */
+@keyframes countdown {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+.countdown-timer {
+  animation: countdown 10s linear forwards;
+}
+
+/* Transitions */
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+}
+
+/* Button styling */
+.norse-blue-btn {
+  @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg active:scale-95;
+}
+
+/* Card styling */
+.fact-myth-card {
+  @apply bg-white rounded-xl shadow-lg p-6 transition-all duration-300 cursor-pointer hover:shadow-xl hover:transform scale-[1.02];
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.fact-myth-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Gradient text animation */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}
+
+/* Star animation */
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.animate-pop {
+  animation: pop 0.3s ease-out;
+}
+
+/* Progress bar animation */
+@keyframes progress {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.animate-progress {
+  animation: progress 0.5s ease-out;
+}
